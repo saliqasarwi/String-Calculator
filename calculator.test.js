@@ -41,7 +41,6 @@ describe('Calculator', () => {
   it('should follow the correct order of operations', () => {
     expect(calc(2, '+', 3, '*', 4)).toBe(14);
   });
-
   // Test case: Invalid operator
   it('should throw an error for an invalid operator', () => {
     expect(() => calc(5, '$', 3)).toThrow('Invalid operator');
@@ -51,4 +50,22 @@ describe('Calculator', () => {
   it('should throw an error for invalid input types', () => {
     expect(() => calc('2', '+', 3)).toThrow('Invalid input type');
   });
+});
+//Test case:multiple operations
+it('should handle multiple operations correctly',()=>{
+expect(calc(2,'+',3,'*',4,'-',1)).toBe(13);
+});
+//Test case:ignore numbers>1000
+it('should ignore numbers bigger than 1000',()=>{
+expect(calc(2,'+',1001)).toBe(2);
+expect(calc(1000,'+',1001,'*',2)).toBe(1000);
+
+});
+//Test case:empty call
+it('should throw error for less than 3 arguments',()=>{
+expect(()=>calc(5)).toThrow('Invalid input type');
+});
+//Test case:Division with decimals
+it('should handle division resulting in decimal',()=>{
+    expect(calc(10,'/',3)).toBeCloseTo(3.333,3);
 });
