@@ -1,0 +1,15 @@
+TN:
+SF:calculator.js
+FN:1,calc
+FNF:1
+FNH:1
+FNDA:10,calc
+DA:1,10
+DA:2,10
+DA:3,1
+LF:3
+LH:3
+BRDA:1,0,0,10
+BRF:1
+BRH:1
+end_of_record

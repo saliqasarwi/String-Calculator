@@ -1,3 +1,16 @@
-function calc(){
-    throw new Error("Not emplemented yet");
+function calc(a,op,b){
+if(typeof a!=='number'||typeof b!=='number'){
+    throw new Error ('Invalid input type');
 }
+switch(op){
+    case '+':return a+b;
+    case '-':return a-b;
+    case '*':return a*b;
+    case '/':
+        if(b===0) throw new Error('Division by zero');
+        return a/b;
+    default:
+        throw new Error('Invalid operator');    
+}
+}
+module.exports = calc;
