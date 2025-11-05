@@ -69,3 +69,15 @@ expect(()=>calc(5)).toThrow('Invalid input type');
 it('should handle division resulting in decimal',()=>{
     expect(calc(10,'/',3)).toBeCloseTo(3.333,3);
 });
+//Test case:when the operator is not a string
+it('should throw an error if the operator type is not string',()=>{
+   expect(() => calc(1, 5, 6)).toThrow('Invalid input type');
+});
+//Test case:when all the numbers>1000
+it('should return 0 if all numbers>1000 ',()=>{
+    expect(calc(10002,'+',5969)).toBe(0);
+ });
+//Test case:when there is only one number
+it('when there is only one number<1000 it should return it ',()=>{
+    expect(calc(1001,'+',2000,'*',1000)).toBe(1000);
+ });    
